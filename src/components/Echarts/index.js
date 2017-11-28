@@ -20,7 +20,7 @@ export default class App extends Component {
           style={{
             height: this.props.height || 400,
           }}
-          source={DEV?require('../../assets/tpl.html'):(Platform.OS === 'ios')?{uri:'../../assets/tpl.html'}:{uri:'file:///android_asset/tpl.html'}}
+          source={(Platform.OS === 'ios')?{uri:'../../assets/tpl.html'}:{uri:'file:///android_asset/tpl.html'}}
           onMessage={event => this.props.onPress ? this.props.onPress(JSON.parse(event.nativeEvent.data)) : null}
         />
       </View>
